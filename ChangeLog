@@ -1,3 +1,145 @@
+gnome-hearts (0.3-2.2) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Don't recommend gnome-games-extra-data. This package is obsolete and
+    doesn't provide anything gnome-hearts could use anyway.
+  * Build using dh-python instead of python-support.  Closes: #786141
+
+ -- Mattia Rizzolo <mattia@debian.org>  Sun, 13 Dec 2015 16:20:50 +0000
+
+gnome-hearts (0.3-2.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Drop gnome-cards patch to use upstream card
+    configuration. (Closes: #660668)
+
+ -- Neil Williams <codehelp@debian.org>  Sun, 08 Jul 2012 16:42:25 -0600
+
+gnome-hearts (0.3-2) unstable; urgency=low
+
+  * Build-depend on intltool to fix FTBFS.
+
+ -- Josselin Mouette <joss@debian.org>  Mon, 28 Jul 2008 12:01:15 +0200
+
+gnome-hearts (0.3-1) unstable; urgency=low
+
+  [ Sander Marechal ]
+  * New upstream release
+   - Three new AI opponents
+   - Bugfixes in the existing AI and scoring
+   - Transation updates
+
+  [ Josselin Mouette ]
+  * Remove versioned build-dependency on scrollkeeper. Closes: #490830.
+
+ -- Sander Marechal <s.marechal@jejik.com>  Thu, 24 Jul 2008 21:52:33 +0200
+
+gnome-hearts (0.2.1-1) unstable; urgency=low
+
+  [ Sander Marechal ]
+  * New upstream release
+    - 01_gnome_cards_data.patch: path to gnome-cards-data cards fixed upstream
+    - 02_fix_pythondir.patch is fixed upstream
+    - 03_shared_link.patch is fixed upstream
+    - 04_fix_desktop.patch is fixed upstream
+
+  [ Sebastian Dröge ]
+  * Update Standards-Version to 3.7.3, no additional changes needed.
+
+ -- Sebastian Dröge <slomo@debian.org>  Tue, 11 Mar 2008 14:51:44 +0100
+
+gnome-hearts (0.2-1) unstable; urgency=low
+
+  [ Sander Marechal ]
+  * New upstream release. Closes: #425670, #420861.
+    - Big rewrite of the C code
+    - Uses Python instead of Lua for AI scripts
+    - Many bugfixes and translation updates
+  * Dependency on Lua replaced with Python
+  * Recreated 01_gnome_cards_data.patch for the new upstream source
+
+  [ Josselin Mouette ]
+  * 02_fix_pythondir.patch: install the private python modules in a
+    private directory.
+  * Call dh_pysupport; build-depend on python-support 0.4.
+  * Don't hardcode the 2.4 version of python.
+  * 03_shared_link.patch: link to python dynamically.
+  * 01_gnome_cards_data.patch:
+    + Fix the path to the cards in gnome-cards-data.
+    + Don't remove the picture, it's useless to do it in the patch.
+
+ -- Josselin Mouette <joss@debian.org>  Tue, 23 Oct 2007 11:49:44 +0200
+
+gnome-hearts (0.1.3-4) unstable; urgency=low
+
+  * 01_gnome_cards_data.patch: use the new path for cards.
+  * Depend on gnome-cards-data 2.20.
+
+ -- Josselin Mouette <joss@debian.org>  Sat, 29 Sep 2007 03:40:20 +0200
+
+gnome-hearts (0.1.3-3) unstable; urgency=high
+
+  * Add a get-orig-source target to retrieve the upstream tarball.
+  * Depend on librsvg2-common for SVG support; closes: #421372.
+  * Wrap build-deps and deps.
+  * Urgency high for RC bugfix.
+
+ -- Loic Minier <lool@dooz.org>  Mon, 30 Apr 2007 13:52:21 +0200
+
+gnome-hearts (0.1.3-2) unstable; urgency=high
+
+  [ Sander Marechal ]
+  * Fixed the 01_gnome_cards_data.patch. Closes: #402715
+
+  [ Loic Minier ]
+  * Urgency high for RC fix.
+
+ -- Loic Minier <lool@dooz.org>  Wed, 13 Dec 2006 00:29:47 +0100
+
+gnome-hearts (0.1.3-1) unstable; urgency=low
+
+  * New upstream release. Closes: #396043.
+    - Fixes crashes when card style or background cannot be loaded
+    - Updated the translations
+  * Backed out the bonded.png style again. The new upstream release will
+    not crash when a style cannot be found but load another available
+    card style instead. This removes the sng dependency and the conflict
+    with gnome-cards-data << 1:2.16
+
+ -- Sander Marechal <s.marechal@jejik.com>  Sat, 11 Nov 2006 18:05:00 +0100
+
+gnome-hearts (0.1.2-2) unstable; urgency=high
+
+  * Add CDBS' utils.
+  * Update patch 01_gnome_cards_data to use bonded.svg as the default card set
+    instead of bonded.png; depend on gnome-cards-data >= 1:2.16; partially
+    fixes #396043.
+  * Extract bonded.png from older gnome-cards-data and install it where
+    expected for backwards compatibility with end-user configs; build-depend
+    on sng; conflict with gnome-cards-data << 1:2.16; partially fixes #396043.
+
+ -- Loic Minier <lool@dooz.org>  Mon, 30 Oct 2006 09:58:17 +0100
+
+gnome-hearts (0.1.2-1) unstable; urgency=low
+
+  * New upstream release:
+    - Fixes a crash in the Luis AI
+    - Updated the translations
+  * Add watch file.
+  * Update copyright URL.
+
+ -- Sander Marechal <s.marechal@jejik.com>>  Thu,  7 Sep 2006 00:54:19 +0200
+
+gnome-hearts (0.1.1-1) unstable; urgency=low
+
+  [ Sander Marechal ]
+  * Initial release. Closes: #370036,
+
+  [ Josselin Mouette ]
+  * Move the executable to /usr/games.
+
+ -- Josselin Mouette <joss@debian.org>  Mon,  3 Jul 2006 19:50:22 +0200
+
 2008-07-24  sander
 
 	* [r206] /branches/0.3.x: Branching version 0.3 for release

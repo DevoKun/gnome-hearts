@@ -1,0 +1,32 @@
+Source: gnome-hearts
+Section: games
+Priority: optional
+Maintainer: Sander Marechal <s.marechal@jejik.com>
+Build-Depends: cdbs,
+               debhelper (>= 5.0),
+               libgtk2.0-dev (>= 2.8.0),
+               libgnome2-dev (>= 2.10),
+               libgnomeui-dev (>= 2.10),
+               libglade2-dev,
+               gettext,
+               gnome-pkg-tools,
+               librsvg2-dev (>= 2.7),
+               python-dev (>= 2.4),
+               libxml-parser-perl,
+               scrollkeeper,
+               intltool (>= 0.29),
+               dh-python
+Uploaders: @GNOME_TEAM@
+Standards-Version: 3.8.0
+
+Package: gnome-hearts
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         ${python:Depends},
+         gnome-cards-data (>= 1:2.20),
+         librsvg2-common
+Description: The classic hearts card game for the GNOME desktop
+ Hearts is an implementation of the classic card game for the GNOME desktop,
+ featuring configurable rulesets and editable computer opponents to 
+ satisfy widely diverging playing styles.

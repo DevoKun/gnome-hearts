@@ -1,0 +1,17 @@
+#!/usr/bin/make -f
+# Sample debian/rules that uses cdbs.  Originaly written by Robert Millan.
+# This file is public domain.
+
+GNOME_DOWNLOAD_URL = http://www.jejik.com/files/gnome-hearts/$(GNOME_TARBALL)
+DEB_PYTHON2_MODULE_PACKAGES := gnome-hearts
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/class/gnome.mk
+include /usr/share/cdbs/1/rules/simple-patchsys.mk
+include /usr/share/cdbs/1/rules/utils.mk
+include /usr/share/gnome-pkg-tools/1/rules/uploaders.mk
+-include /usr/share/gnome-pkg-tools/1/rules/gnome-get-source.mk
+
+binary-post-install/gnome-hearts::
+	mv debian/gnome-hearts/usr/bin debian/gnome-hearts/usr/games
+	dh_python2 /usr/share/gnome-hearts/
